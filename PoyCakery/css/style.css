@@ -1,0 +1,241 @@
+/* =========================
+   ROOT COLOR
+========================= */
+:root {
+    --pink-main: #ffe4ec;
+    --pink-soft: #fff0f6;
+    --pink-dark: #ff6f91;
+    --pink-glow: #ffc2d1;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15.5px;
+    background: linear-gradient(180deg, #fff0f6 0%, #ffe4ec 100%);
+    cursor: url('https://cdn-icons-png.flaticon.com/32/1046/1046784.png'), auto;
+    overflow-x: hidden;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* HEADING */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pink-dark);
+    letter-spacing: 0.5px;
+}
+
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 600; }
+h3 { font-size: 1.2rem; }
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background: rgba(255, 228, 236, 0.85) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* LOGO IMAGE */
+.navbar-brand img {
+    width: 42px;
+    transition: 0.3s;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* MENU */
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-left: 12px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: white;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.hero p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.glow {
+    text-shadow: 0 0 8px var(--pink-glow),
+                 0 0 18px var(--pink-glow);
+}
+
+/* =========================
+   CARD (PRODUCT & ABOUT)
+========================= */
+.cake-card,
+.about-card {
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 6px 15px rgba(255,182,193,0.25);
+    transition: all 0.35s ease;
+    padding: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* subtle gradient border glow */
+.cake-card::before,
+.about-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    background: linear-gradient(120deg, #ffd6e7, #ffc2d1);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+/* TEXT */
+.cake-card h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cake-card p,
+.about-card p,
+.about-card li {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* HOVER CARD */
+.cake-card:hover,
+.about-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 30px rgba(255,105,180,0.3);
+}
+
+/* IMAGE EFFECT */
+.cake-card img {
+    transition: 0.5s ease;
+    border-radius: 14px;
+}
+
+.cake-card:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-cute {
+    background: linear-gradient(135deg, #ff6f91, #ff85a2);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    padding: 7px 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-cute:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 15px rgba(255,105,180,0.35);
+}
+
+/* =========================
+   FLOATING CAKE
+========================= */
+.floating {
+    position: fixed;
+    width: 45px;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.75;
+    filter: drop-shadow(0 5px 10px rgba(255,182,193,0.4));
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-20px);}
+}
+
+/* =========================
+   SAKURA
+========================= */
+.falling {
+    position: fixed;
+    top: -50px;
+    font-size: 16px;
+    animation: fall linear infinite;
+    opacity: 0.85;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+
+/* =========================
+   LOVE CLICK
+========================= */
+.love {
+    position: fixed;
+    font-size: 16px;
+    animation: pop 1s ease forwards;
+}
+
+@keyframes pop {
+    0% {transform: scale(0);}
+    100% {transform: scale(2); opacity: 0;}
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--pink-main);
+    color: white;
+    font-size: 0.85rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -5px 15px rgba(255,182,193,0.2);
+}
