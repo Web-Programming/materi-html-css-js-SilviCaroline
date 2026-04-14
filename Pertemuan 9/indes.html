@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <h2>Local Storage:</h2>
+    <p id="local"></p>
+
+    <h2>Session Storage:</h2>
+    <p id="session"></p>
+
+    <h2>Cookie:</h2>
+    <p id="cookie"></p>
+
+    <script>
+        // ========================
+        // LOCAL STORAGE
+        // ========================
+        localStorage.setItem("name", "Silvi Caroline");
+        document.getElementById("local").innerHTML = localStorage.getItem("name");
+
+        // ========================
+        // SESSION STORAGE
+        // ========================
+        sessionStorage.setItem("name", "Silvi Caroline");
+        document.getElementById("session").innerHTML = sessionStorage.getItem("name");
+
+        // ========================
+        // COOKIE
+        // ========================
+        document.cookie = "username=Silvi Caroline Cookie;";
+
+        // ambil cookie
+        document.getElementById("cookie").innerHTML = document.cookie;
+    </script>
+</body>
+</html>
